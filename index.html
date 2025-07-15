@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Beautiful Priti ❤️</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #ff6b6b, #ff8e8e, #ffa8a8, #ff6b6b);
+            background-size: 400% 400%;
+            animation: gradientShift 8s ease infinite;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .main-title {
+            font-size: 3.5rem;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            margin-bottom: 1rem;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            color: #fff;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .content-section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            animation: fadeInUp 1s ease-out;
+            backdrop-filter: blur(10px);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .love-message {
+            font-size: 1.3rem;
+            color: #333;
+            line-height: 1.6;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .romantic-quote {
+            font-style: italic;
+            font-size: 1.4rem;
+            color: #d63384;
+            text-align: center;
+            padding: 1.5rem;
+            border-left: 4px solid #ff6b6b;
+            background: linear-gradient(45deg, #fff0f6, #ffe4e1);
+            border-radius: 10px;
+            margin: 2rem 0;
+        }
+
+        .heart-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+        }
+
+        .heart-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.6);
+        }
+
+        .floating-hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .heart {
+            position: absolute;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 2rem;
+            animation: floatUp 6s infinite linear;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .photo-frame {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin: 2rem auto;
+            background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+            padding: 5px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .photo-inner {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #ffd1dc, #ffb6c1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: #d63384;
+            overflow: hidden;
+        }
+
+        .photo-inner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .surprise-section {
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .surprise-button {
+            background: linear-gradient(45deg, #9c27b0, #e91e63);
+            color: white;
+            border: none;
+            padding: 20px 40px;
+            font-size: 1.3rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(156, 39, 176, 0.4);
+        }
+
+        .surprise-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 30px rgba(156, 39, 176, 0.6);
+        }
+
+        .hidden-message {
+            display: none;
+            background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-top: 2rem;
+            animation: slideIn 0.5s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .reasons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .reason-card {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transform: translateY(20px);
+            opacity: 0;
+            animation: slideUp 0.6s ease-out forwards;
+        }
+
+        .reason-card:nth-child(1) { animation-delay: 0.2s; }
+        .reason-card:nth-child(2) { animation-delay: 0.4s; }
+        .reason-card:nth-child(3) { animation-delay: 0.6s; }
+
+        @keyframes slideUp {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .sparkle {
+            position: fixed;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        @media (max-width: 768px) {
+            .main-title { font-size: 2.5rem; }
+            .container { padding: 1rem; }
+            .content-section { padding: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-hearts" id="heartsContainer"></div>
+    
+    <div class="container">
+        <div class="header">
+            <h1 class="main-title">For My Beautiful Priti ❤️</h1>
+            <p class="subtitle">You make my world brighter every single day</p>
+        </div>
+
+        <div class="content-section">
+            <div class="photo-frame">
+                <div class="photo-inner">
+                    <!-- Replace "your-image-url-here.jpg" with Priti's actual photo URL -->
+                    <img src='https://i.postimg.cc/V5DSNwWX/IMG-20250526-172651-135.jpg' border='0' alt='IMG-20250526-172651-135'/>
+                </div>
+            </div>
+            
+            <div class="love-message">
+                <p>Dear Priti, every moment with you feels like a beautiful dream. Your smile lights up my world, and your laughter is the sweetest music to my ears. I created this little space on the internet just for you, because you deserve all the beauty and love in the world! 💕</p>
+            </div>
+            
+            <div class="romantic-quote">
+                "In a sea of people, my eyes will always search for you" ✨
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2 style="text-align: center; color: #d63384; margin-bottom: 2rem;">Why You're Amazing</h2>
+            <div class="reasons-grid">
+                <div class="reason-card">
+                    <h3>Your Beautiful Smile 😊</h3>
+                    <p>Your smile can brighten even the cloudiest day and makes everything better!</p>
+                </div>
+                <div class="reason-card">
+                    <h3>Your Kind Heart 💝</h3>
+                    <p>Your kindness and compassion make you the most wonderful person I know!</p>
+                </div>
+                <div class="reason-card">
+                    <h3>Your Amazing Laugh 😄</h3>
+                    <p>Your laughter is contagious and fills my heart with so much joy!</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section surprise-section">
+            <h2 style="color: #d63384; margin-bottom: 2rem;">I Have a Surprise for You!</h2>
+            <button class="surprise-button" onclick="showSurprise()">
+                Click for Your Special Message! 🎁
+            </button>
+            
+            <div id="hiddenMessage" class="hidden-message">
+                <h3 style="color: #d63384; margin-bottom: 1rem;">My Promise to You 💖</h3>
+                <p style="font-size: 1.2rem; line-height: 1.6;">
+                    Priti, I promise to always make you smile, to support your dreams, and to love you with all my heart. You're not just my wife - you're my best friend, my happiness, and my everything. Thank you for being the amazing person you are! 🌹
+                </p>
+                <p style="margin-top: 1rem; font-weight: bold; color: #9c27b0;">
+                    I love you more than words can express! 💕✨
+                </p>
+            </div>
+        </div>
+
+        <div class="content-section" style="text-align: center;">
+            <button class="heart-button" onclick="createHeartExplosion()">
+                Send Hearts to Priti! 💕
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Create floating hearts
+        function createFloatingHeart() {
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.innerHTML = '❤️';
+            heart.style.left = Math.random() * 100 + '%';
+            heart.style.animationDuration = (Math.random() * 3 + 3) + 's';
+            heart.style.animationDelay = Math.random() * 2 + 's';
+            
+            document.getElementById('heartsContainer').appendChild(heart);
+            
+            setTimeout(() => {
+                heart.remove();
+            }, 6000);
+        }
+
+        // Create hearts continuously
+        setInterval(createFloatingHeart, 800);
+
+        // Show surprise message
+        function showSurprise() {
+            const hiddenMessage = document.getElementById('hiddenMessage');
+            hiddenMessage.style.display = 'block';
+            
+            // Create confetti effect
+            for (let i = 0; i < 30; i++) {
+                setTimeout(() => {
+                    createSparkle();
+                }, i * 100);
+            }
+        }
+
+        // Create sparkle effect
+        function createSparkle() {
+            const sparkle = document.createElement('div');
+            sparkle.className = 'sparkle';
+            sparkle.innerHTML = '✨';
+            sparkle.style.left = Math.random() * window.innerWidth + 'px';
+            sparkle.style.top = Math.random() * window.innerHeight + 'px';
+            sparkle.style.fontSize = Math.random() * 20 + 10 + 'px';
+            sparkle.style.color = `hsl(${Math.random() * 360}, 70%, 60%)`;
+            
+            document.body.appendChild(sparkle);
+            
+            setTimeout(() => {
+                sparkle.remove();
+            }, 2000);
+        }
+
+        // Heart explosion effect - auto clicks 15 times
+        function createHeartExplosion() {
+            // Create 15 consecutive heart explosions
+            for (let explosionCount = 0; explosionCount < 15; explosionCount++) {
+                setTimeout(() => {
+                    // Each explosion creates 20 hearts
+                    for (let i = 0; i < 20; i++) {
+                        setTimeout(() => {
+                            const heart = document.createElement('div');
+                            heart.innerHTML = '💕';
+                            heart.style.position = 'fixed';
+                            heart.style.left = '50%';
+                            heart.style.top = '50%';
+                            heart.style.fontSize = '2rem';
+                            heart.style.pointerEvents = 'none';
+                            heart.style.zIndex = '1000';
+                            heart.style.transform = 'translate(-50%, -50%)';
+                            
+                            const angle = (i / 20) * Math.PI * 2;
+                            const velocity = 100 + Math.random() * 100;
+                            
+                            document.body.appendChild(heart);
+                            
+                            let x = 0, y = 0;
+                            const animate = () => {
+                                x += Math.cos(angle) * 5;
+                                y += Math.sin(angle) * 5 + 2;
+                                
+                                heart.style.transform = `translate(${x}px, ${y}px)`;
+                                heart.style.opacity = Math.max(0, 1 - Math.abs(y) / 200);
+                                
+                                if (Math.abs(y) < 300) {
+                                    requestAnimationFrame(animate);
+                                } else {
+                                    heart.remove();
+                                }
+                            };
+                            
+                            animate();
+                        }, i * 50);
+                    }
+                }, explosionCount * 400); // 400ms delay between each explosion
+            }
+            
+            // Show a special message during the heart shower
+            showHeartShowerMessage();
+        }
+
+        // Special message during heart shower
+        function showHeartShowerMessage() {
+            const message = document.createElement('div');
+            message.innerHTML = '💖 SENDING LOTS OF LOVE TO PRITI! 💖';
+            message.style.position = 'fixed';
+            message.style.top = '20%';
+            message.style.left = '50%';
+            message.style.transform = 'translateX(-50%)';
+            message.style.fontSize = '2rem';
+            message.style.color = '#ff1493';
+            message.style.fontWeight = 'bold';
+            message.style.textShadow = '2px 2px 4px rgba(0,0,0,0.5)';
+            message.style.zIndex = '1001';
+            message.style.animation = 'pulse 1s infinite';
+            message.style.pointerEvents = 'none';
+            
+            document.body.appendChild(message);
+            
+            // Remove message after 6 seconds (duration of heart shower)
+            setTimeout(() => {
+                message.remove();
+            }, 6000);
+        }
+
+        // Add some initial sparkles
+        setTimeout(() => {
+            for (let i = 0; i < 10; i++) {
+                setTimeout(createSparkle, i * 300);
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
